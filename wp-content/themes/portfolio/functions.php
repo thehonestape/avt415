@@ -62,3 +62,10 @@ require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 * Load WooCommerce functions.
 */
 require get_template_directory() . '/inc/woocommerce.php';
+
+// years shortcode
+function year_shortcode() {
+  $year = date('Y');
+  return $year;
+}
+add_shortcode('year', 'year_shortcode');
