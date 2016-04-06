@@ -1,2 +1,2 @@
 # avt415
-test for wordpress
+Base Wordpress setup for class examples
