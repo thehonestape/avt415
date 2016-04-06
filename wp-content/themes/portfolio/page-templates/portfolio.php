@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full Width Page
+ * Template Name: Portfolio
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published
  *
@@ -17,9 +17,22 @@ get_header(); ?>
 
             <main id="main" class="site-main" role="main">
 
-                <?php while ( have_posts() ) : the_post(); ?>
+							<?php
 
-                    <?php get_template_part( 'loop-templates/content', 'page' ); ?>
+//Define your custom post type name in the arguments
+
+$args = array('post_type' => 'work');
+
+//Define the loop based on arguments
+
+$loop = new WP_Query( $args );
+
+//Display the contents
+
+while ( $loop->have_posts() ) : $loop->the_post();
+?>
+
+                    <?php get_template_part( 'loop-templates/content', 'work' ); ?>
 
                     <?php
                         // If comments are open or we have at least one comment, load up the comment template
